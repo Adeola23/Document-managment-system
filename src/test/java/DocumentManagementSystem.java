@@ -3,7 +3,11 @@ import org.example.Document;
 import org.example.DocumentManagementSystem;
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matcher.*;
+
 import java.io.File;
+import java.util.List;
 
 
 public class DocumentManagementSystemTest {
@@ -21,6 +25,13 @@ public class DocumentManagementSystemTest {
         system.importFile(LETTER);
         final Document document = onlyDocument();
         assertAttributeEquals(document, Attriibutes.PATH, LETTER);
+    }
+
+
+    private Document onlyDocument(){
+        final List<Document> documents = system.contents();
+        assertThat(documents, hasSize(1));
+        return documents.get(0);
     }
 
 
