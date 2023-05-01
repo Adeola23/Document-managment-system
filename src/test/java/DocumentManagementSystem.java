@@ -27,6 +27,17 @@ public class DocumentManagementSystemTest {
         assertAttributeEquals(document, Attriibutes.PATH, LETTER);
     }
 
+    private void assertAttributeEquals(
+            final Document document,
+            final String attributeName,
+            final String expectedValue
+    ){
+        assertEquals("Document has the wrong value for " +
+                attributeName,
+                expectedValue,
+                document.getAttribute(attributeName));
+    }
+
 
     private Document onlyDocument(){
         final List<Document> documents = system.contents();
