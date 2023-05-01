@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matcher.*;
+import static org.junit.Assert.assertEquals;
 
 import java.io.File;
 import java.util.List;
